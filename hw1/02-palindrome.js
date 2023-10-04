@@ -1,3 +1,5 @@
+//citations: w3schools, CSS airbnb style guide
+
 const elem = document.querySelector("input");
 const output = document.getElementById("output");
 
