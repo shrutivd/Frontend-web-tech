@@ -41,6 +41,7 @@ function handleInput(event) {
 		output.textContent = "Negative numbers not allowed.";
 	} else {
 		//if the user enters 0
-		output.textContent = "It is neither positive nor negative";
+		output.style.color = "Red";
+		output.textContent = "Enter number other than '0'.";
 	}
 }
