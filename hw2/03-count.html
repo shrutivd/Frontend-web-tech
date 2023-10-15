@@ -7,18 +7,24 @@
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+      <style>
+        .highlight{
+          background-color: yellow;
+          font-weight: bold;
+        }
+      </style>
     <script defer src="03-count.js"></script>
   </head>
-  <body>
-    <main>
+  <body class = "d-flex justify-content-center align-content-center p-5 bg-primary">
+    <main class = "bg-white w-25 p-5 m-5 mt-2 rounded" >
       <h1>Exercise 03 - Count</h1>
       <hr />
       <div>
-        <label>Highlight all occurences of a word:</label>
-        <input />
+        <label for = "userip">Highlight all occurences of a word:</label>
+        <input id = "userip"/>
       </div>
       <hr />
-      <div>
+      <div id = "search-text">
         It was the best of times, it was the worst of times, it was the age of
         wisdom, it was the age of foolishness, it was the epoch of belief, it
         was the epoch of incredulity, it was the season of Light, it was the
