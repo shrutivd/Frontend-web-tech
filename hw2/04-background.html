@@ -9,20 +9,20 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
     <script defer src="04-background.js"></script>
   </head>
-  <body>
-    <main>
-      <h1>Exercise 04 - Background</h1>
-      <p>
+  <body class="d-flex justify-content-center align-content-center p-5">
+    <main class="bg-light w-25 p-15px  rounded">
+      <h3 class = "m-3" style="white-space: nowrap;">Exercise 04 - Background</h3>
+      <p class = "m-3">
         The background color will change every few seconds (as indicated below).
         You can stop this behavior and you can also change how often the
         background color changes.
       </p>
       <div>
-        <label>Background change interval (seconds): </label>
-        <input />
+        <label class="m-3 mb-0">Background change interval (seconds): </label>
+        <input class="m-3 mt-0" type="number" id="interval"/>
       </div>
       <div>
-        <input />
+        <button type="button" class="btn btn-primary m-3">Start</button>
       </div>
     </main>
   </body>
