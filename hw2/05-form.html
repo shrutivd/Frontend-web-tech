@@ -12,15 +12,15 @@
 		<script defer src="05-form.js"></script>
 	</head>
 	<body class="d-flex justify-content-center align-content-center mt-5 bg-dark">
-		<main class="bg-light w-25 rounded">
+		<main class="container bg-light w-25 rounded">
 			<form class="form" id="form" action="/submit">
 				<div style="text-align: center">
 					<h1 class="title mt-4" id="title">Exercise 05 - Form</h1>
 				</div>
 
 				<div class="name" id="nameip">
-					<div class="m-3 mb-2">
-						<label><b>Full Name:</b></label>
+					<div class="m-3 mb-2 fw-bold">
+						<label for="name">Full Name:</label>
 					</div>
 					<div class="m-3 mt-0">
 						<input id="name" class="w-100" type="text" />
@@ -28,8 +28,8 @@
 				</div>
 
 				<div class="email" id="emailip">
-					<div class="m-3 mb-2">
-						<label><b>Email:</b></label>
+					<div class="m-3 mb-2 fw-bold">
+						<label for="email">Email:</label>
 					</div>
 					<div class="m-3 mt-0">
 						<input id="email" class="w-100" type="text" />
@@ -37,21 +37,21 @@
 				</div>
 
 				<div clsss="regstatus" id="regstatusip">
-					<div class="m-3">
-						<label for="regstatus"><b>Registration Status:</b></label>
+					<div class="m-3 fw-bold">
+						<label for="status">Registration Status:</label>
 					</div>
 					<div class="m-3">
 						<select name="status" id="status" class="w-100">
 							<option value="choose an option">Choose an Option</option>
 							<option value="Registered">Registered</option>
-							<option value="Unregistered">Unregister</option>
+							<option value="Not registered">Unregister</option>
 						</select>
 					</div>
 				</div>
 
 				<div class="question" id="questionip">
-					<div class="m-3 mb-0">
-						<label><b>Have you taken any of the following courses?</b></label>
+					<div class="m-3 mb-0 fw-bold">
+						<label for="course">Have you taken any of the following courses?</label>
 					</div>
 					<div class="m-3 mt-2 mb-0">
 						<input type="checkbox" id="course1" name="course1" />
@@ -68,8 +68,8 @@
 				</div>
 
 				<div class="else" id="elseip">
-					<div class="m-3 mb-2">
-						<label for="else"><b>Anything else?</b></label>
+					<div class="m-3 mb-2 fw-bold">
+						<label for="textArea">Anything else?</label>
 					</div>
 					<div class="m-3 mt-0 mb-0">
 						<textarea id="textArea" name="text" class="w-100"></textarea>

@@ -12,7 +12,9 @@ function handleKeyDown(event) {
 			//as it is visually rendered on the web page
 			const text = searchText.innerText;
 			// regex constructor consisting user text and global and case-insensitive flag
-			const regex = new RegExp(userInput, "gi");
+			//const regex = new RegExp(userInput, "gi");
+		    const regex = new RegExp(`\\b${userInput}\\b`, "gi");
+
 			const highlightedText = text.replace(
 				regex,
 				(match) => `<span class="highlight">${match}</span>`

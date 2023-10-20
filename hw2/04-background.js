@@ -20,10 +20,16 @@ button.addEventListener("click", function () {
 		clearInterval(interval_id);
 		interval_id = null;
 		button.textContent = "Start";
+        button.classList.add('btn-primary');
+        button.classList.remove('btn-danger');
+		 
 	} else {
 		const interval =
 			parseInt(document.getElementById("interval").value, 10) * 1000;
 		interval_id = setInterval(setBackgroundColour, interval);
 		button.textContent = "Stop";
+		button.classList.add('btn-danger');
+        button.classList.remove('btn-primary');
+		
 	}
 });
