@@ -1,3 +1,10 @@
+import React, { useEffect, useState } from "react";
+import Chart from "chart.js/auto";
+import { CategoryScale } from "chart.js";
+import { Doughnut } from "react-chartjs-2";
+import "./Houses.css";
+
+
 const backgroundColors = [
 	"rgba(54, 162, 235, 0.8)",
 	"rgba(255, 206, 86, 0.8)",
@@ -52,35 +59,25 @@ const borderColors = [
 	"rgba(0, 128, 0, 1)",
 ];
 
-//Algorithm:
-//*fetched the data
-//*mapped the family names of all the characters.
-//*used hashmap to find unique family names and 
-//group, the desired family names together.
-//*stored the keys and values obtained from hashmap into 
-//labels and values arrays.
-//*Passed these arrays to the function generating donut chart
-//*used these arrays to get the labels and data for donut chart
+const Houses = () => {
+  
+	const [house, setHouse] = useState({labels:[], values:[]});
 
-
-// url for the Thrones API
-const url = "https://thronesapi.com/api/v2/Characters";
-
-const getData = async () => {
-
-	await fetch(url)
-	.then((response) => {
-		return response.json();
-	})
-	.then((data) => {
-		const family = data.map((item) => item.family);
-
-		let hashMap = new Map();
+	const url = "https://thronesapi.com/api/v2/Characters";
+	const fetchData = () => {
+		fetch(url)
+			.then((response) => {
+				return response.json();
+			})
+			.then((data) => {
+				const family = data.map((item) => item.family);
+        		let hashMap = new Map();
 		for (let i = 0; i < family.length; ++i) {
 			if (
 				family[i].includes("Targaryan") ||
 				family[i].includes("House Targaryen")
 			) {
+				console.log(family[i]);
 				if (hashMap.has("House Targaryen")) {
 					hashMap.set("House Targaryen", hashMap.get("House Targaryen") + 1);
 				} else {
@@ -257,40 +254,49 @@ const getData = async () => {
 				} else {
 					hashMap.set("Unknown", 1);
 				}
-			} 
+			}
 		}
 
-		let labels = [];
-		let values = [];
+    const labels = [];
+    const values = [];
 
-		for (let [key, value] of hashMap) {
-			labels.push(key);
-			values.push(value);
-		}
-		renderChart(labels, values);
-	});
+    for (let [key, value] of hashMap){
+      labels.push(key);
+      values.push(value);
+    }
+				setHouse({labels, values});
+			});
+	};
 
+	useEffect(() => {
+		fetchData();
+	}, []);
+
+	
+  const donut_chart = {
+    labels : house.labels,
+    datasets: [{
+      label: 'houses', 
+      data: house.values,
+      backgroundColor: backgroundColors,
+      borderColor: borderColors,
+    }]
+  }
+
+  const options = {
+    
+  }
+  
+	return (
+		<div className="display">
+			<h1>Donut Chart:</h1>
+      <div className="donut">
+          <Doughnut
+          data = {donut_chart}
+          options = {options}/>
+    </div>
+		</div>
+	);
 };
 
-
-
-const renderChart = (labels, values) => {
-	const donutChart = document.querySelector(".donut-chart");
-	new Chart(donutChart, {
-		type: "doughnut",
-		data: {
-			labels: [...labels],
-			datasets: [
-				{
-					label: "My First Dataset",
-					data: [...values],
-					backgroundColor: backgroundColors,
-					borderColor: borderColors,
-					borderWidth: 1,
-				},
-			],
-		},
-	});
-};
-
-getData();
+export default Houses;
