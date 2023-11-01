@@ -1,20 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>05 - Form</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
-    <script defer src="05-form.js"></script>
-  </head>
-  <body>
-    <main>
-      <form>
-        <h1>Exercise 05 - Form</h1>
-      </form>
-    </main>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>05 - Form</title>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+		/>
+		<script defer src="05-form.js"></script>
+	</head>
+	<body class="d-flex justify-content-center align-content-center mt-5 bg-dark">
+		<main class="container bg-light w-25 rounded">
+			<form class="form" id="form" action="/submit">
+				<div style="text-align: center">
+					<h1 class="title mt-4" id="title">Exercise 05 - Form</h1>
+				</div>
+
+				<div class="name" id="nameip">
+					<div class="m-3 mb-2 fw-bold">
+						<label for="name">Full Name:</label>
+					</div>
+					<div class="m-3 mt-0">
+						<input id="name" class="w-100" type="text" />
+					</div>
+				</div>
+
+				<div class="email" id="emailip">
+					<div class="m-3 mb-2 fw-bold">
+						<label for="email">Email:</label>
+					</div>
+					<div class="m-3 mt-0">
+						<input id="email" class="w-100" type="text" />
+					</div>
+				</div>
+
+				<div clsss="regstatus" id="regstatusip">
+					<div class="m-3 fw-bold">
+						<label for="status">Registration Status:</label>
+					</div>
+					<div class="m-3">
+						<select name="status" id="status" class="w-100">
+							<option value="choose an option">Choose an Option</option>
+							<option value="Registered">Registered</option>
+							<option value="Not registered">Unregister</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="question" id="questionip">
+					<div class="m-3 mb-0 fw-bold">
+						<label for="course">Have you taken any of the following courses?</label>
+					</div>
+					<div class="m-3 mt-2 mb-0">
+						<input type="checkbox" id="course1" name="course1" />
+						<label for="course1">Programming Languages</label>
+					</div>
+					<div class="m-3 mb-0 mt-0">
+						<input type="checkbox" id="course2" name="course2" />
+						<label for="course2">Operating Systems</label>
+					</div>
+					<div class="m-3 mb-0 mt-0">
+						<input type="checkbox" id="course3" name="course3" />
+						<label for="course3">Full Stack Web Development</label>
+					</div>
+				</div>
+
+				<div class="else" id="elseip">
+					<div class="m-3 mb-2 fw-bold">
+						<label for="textArea">Anything else?</label>
+					</div>
+					<div class="m-3 mt-0 mb-0">
+						<textarea id="textArea" name="text" class="w-100"></textarea>
+					</div>
+				</div>
+
+				<div class="d-flex justify-content-center align-content-center">
+					<button type="submit" class="btn btn-primary w-50 my-4 mx-2 px-5">
+						Submit
+					</button>
+					<button type="reset" class="btn btn-secondary w-50 my-4 mx-2 px-5">
+						Reset
+					</button>
+				</div>
+			</form>
+		</main>
+	</body>
 </html>
