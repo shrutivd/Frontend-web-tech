@@ -1,32 +1,29 @@
 :root {
-  --black: #020202;
-  --white: #ffffff;
-  --blue: #00425c;
-  --cyan: #17a2b8;
+	--black: #020202;
+	--white: #ffffff;
+	--blue: #00425c;
+	--cyan: #17a2b8;
 }
 
 body {
-  background-color: var(--cyan);
+	background-color: var(--cyan);
 }
 
 h1 {
-  text-align: center;
+	text-align: center;
 }
 
 .donut-chart {
-  border-radius: 0.8rem;
-  background-color: var(--white);
+	border-radius: 0.8rem;
+	background-color: var(--white);
 }
 
-
-.card{
-  border: 0.5rem solid var(--cyan);
-  
+.card {
+	border: 0.5rem solid var(--cyan);
 }
 
-.card:hover{
-  border: 0.5rem solid var(--blue);
-  background-color: var(--blue);
-  color: var(--white);
+.card:hover {
+	border: 0.5rem solid var(--blue);
+	background-color: var(--blue);
+	color: var(--white);
 }
-

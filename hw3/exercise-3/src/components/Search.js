@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 //import {FaSearch} from "react-icons/fa"
 import "./search.css";
 
@@ -46,7 +46,7 @@ const Search = () => {
 					<div>
 						<h2>Character Information</h2>
 						<p>Name: {selected?.fullName}</p>
-						{selected?.image && <img src={selected.imageUrl} alt={`Image`}/>}
+						{selected?.image && <img src={selected.imageUrl} alt={`Image`} />}
 					</div>
 				) : (
 					<p>No details found for this character.</p>
