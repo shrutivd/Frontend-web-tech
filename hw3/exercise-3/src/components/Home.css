@@ -1,0 +1,12 @@
+.text {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+h1 {
+	font-weight: bold;
+}
+.para {
+	width: 50%;
+	margin: 0 auto;
+}
